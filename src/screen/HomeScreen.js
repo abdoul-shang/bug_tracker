@@ -1,11 +1,14 @@
-import React from 'react' 
-import { Button } from 'react-bootstrap'
+import React, { useEffect } from 'react' 
+import { Button, Container } from 'react-bootstrap'
 
 import { useDispatch, useSelector } from 'react-redux'
 import { getProjectDisplay } from '../actions/projectActions'
 import DeveloperComponent from '../components/DeveloperComponetn'
 import AdminComponent from '../components/AdminComponent'
 import { getUserList } from '../actions/userAction'
+import '../components/css/main.css'
+import '../components/css/AdminComponent.css'
+
 
 const HomeScreen = () => { 
 
@@ -26,25 +29,26 @@ const HomeScreen = () => {
   // const {loading, userInfo, error } = userRegister 
   const {loading, projects, error} = projectDisplay 
 
-  
 
   const displayHandler = () => {
       //  e.preventDefault()
        console.log('clicked')
       //  dispatch(getProjectDisplay()) 
-      // dispatch(getUserList()) 
-      
-       
-  }
+      // dispatch(getUserList())     
+  } 
+
+  // useEffect(()=>{
+  //   if(userInfo?.isAdmin){
+  //     dispatch(getUserList())
+  //   }
+  // },[userInfo]) 
+
+  console.log('cvcvcvcv', users)
   
   return (
-    <div>
-      <h1>welcome {userInfo?.first_name} - {userInfo?.last_name}</h1>
-      {userInfo?.isAdmin ? <h2>You are the admin of this app</h2>: <h2>you were assigned to project below</h2>}
-      {/* <Button onClick={()=>displayHandler()}>display</Button>  */}
-      {userInfo?.isAdmin ?  <AdminComponent /> : <DeveloperComponent />}
-    
-      </div> 
+    <div className='large'>
+      {userInfo?.isAdmin ?  <AdminComponent  userInfo={userInfo} /> : <DeveloperComponent />}
+    </div>
 
   )
 }

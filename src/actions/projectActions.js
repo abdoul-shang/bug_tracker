@@ -23,7 +23,6 @@ export const getProjectDisplay = () => async(dispatch, getState) => {
 
         const {data} = await axios.get('http://127.0.0.1:8000/projects/', config) 
 
-        console.log('dataaaaaaaa', data)
         dispatch({
             type: PROJECT_DISPLAY_SUCCESS,
             payload: data

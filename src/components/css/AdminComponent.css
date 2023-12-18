@@ -1,0 +1,48 @@
+
+
+.log-x{
+    margin-left: 2rem;
+} 
+
+.large{
+    position: absolute;
+    /* top: 0; */
+    left: 0;
+    right: 0;
+    /* background-color: rgb(73, 122, 146); */
+} 
+
+.nav-link{
+    line-height: 3rem;
+}  
+.nav-link .x-link:hover{
+    background-color: rgb(70, 206, 224);
+    color: #fff;
+    transition: 300ms all;
+    /* width: 100%; */
+}
+.x-link{
+    font-size: 2rem;
+    color: rgb(50, 51, 53);
+}
+
+.p-0{
+    padding: 0 !important;
+}
+
+.ml-0 {
+    margin-left: 0;
+}
+.mr-0{
+    margin-right: 0;
+} 
+.mr-icon{
+    margin-right: 1rem;
+} 
+
+.yellow{
+    background-color: rgb(236, 233, 40);
+}
+
+
+
