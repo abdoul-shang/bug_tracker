@@ -1,0 +1,23 @@
+.ml {
+  margin-left: 2rem;
+}
+
+.d-f {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background-color: blue; */
+}
+
+.custom-modal-body {
+  width: 50rem; /* Set the desired width */
+  /* background-color: aqua; */
+}
+
+.right {
+  float: right;
+}
+
+/* .form-new-project {
+  line-height: 4rem;
+} */

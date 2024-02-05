@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import {
   Badge,
   Button,
@@ -7,11 +7,11 @@ import {
   Form,
   Nav,
   NavDropdown,
-  NavLink,
   Navbar,
   Offcanvas,
   Row,
 } from "react-bootstrap";
+import { useDispatch, useSelector } from "react-redux";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faCoffee,
@@ -24,37 +24,19 @@ import {
   faTicket,
   faUser,
 } from "@fortawesome/free-solid-svg-icons";
-import "./css/AdminComponent.css";
-import "./css/main.css";
+import SideBarData from "./AdminComp/SideBarData";
 import Dashboard from "./AdminComp/Dashboard";
 import ManageRole from "./AdminComp/ManageRole";
-import SideBarData from "./AdminComp/SideBarData";
 import ManageUser from "./AdminComp/ManageUser";
 import MyProjects from "./AdminComp/MyProjects";
 import MyTickets from "./AdminComp/MyTickets";
-import { useDispatch, useSelector } from "react-redux";
-import { getProjectDisplay } from "../actions/projectActions";
 import NavbarHoc from "../hoc/NavbarHoc";
-import SelectedSidebarComp from "./AdminComp/comp/SelectedSidebarComp";
+import EnhancedHomeScreen from "../screen/HomeScreen";
 
-const AdminComponent = (props) => {
-  // console.log("useeeeeer", users);
-
-  console.log("selectedSidebarItem in admin", props.selectedSideBarItem);
-
-  const projectDisplay = useSelector((state) => state.projectDisplay);
-
-  const { projects } = projectDisplay;
-
-  const dispatch = useDispatch();
-
-  // useEffect(() => {
-  //   if (value === "MyProjects") {
-  //     dispatch(getProjectDisplay());
-  //   }
-  // }, [value]);
-
-  // return <div>heloooooo-{props.selectedSideBarItem}</div>;
+const Header = (props) => {
+  // console.log("SelectedidebarItem in Header", typeof props.selectedSideBarItem);
+  // console.log("value in Header", props.value);
+  // console.log("nndmmdd", props.selectedSideBarItem[props.value]);
   return (
     <>
       {[false].map((expand) => (
@@ -126,8 +108,8 @@ const AdminComponent = (props) => {
                 </Offcanvas.Title>
               </Offcanvas.Header>
               {/* <Nav>
-               <Nav.Link> Hello! {userInfo.first_name} - {userInfo.last_name}</Nav.Link>
-            </Nav> */}
+                 <Nav.Link> Hello! {userInfo.first_name} - {userInfo.last_name}</Nav.Link>
+              </Nav> */}
               <Offcanvas.Body>
                 <Nav className="justify-content-end flex-grow-1 pe-3 nav-link">
                   {SideBarData.map((data) => (
@@ -147,9 +129,10 @@ const AdminComponent = (props) => {
           </Container>
         </Navbar>
       ))}
-      <SelectedSidebarComp selectedSideBarItem={props.selectedSideBarItem} />
+      {/* {props.selectedSideBarItem} */}
+      {/* <EnhancedHomeScreen /> */}
     </>
   );
 };
 
-export default NavbarHoc(AdminComponent);
+export default NavbarHoc(Header);

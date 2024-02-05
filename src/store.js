@@ -4,55 +4,56 @@ import { createStore, combineReducers, applyMiddleware } from "redux";
 import thunk from "redux-thunk";
 
 import { composeWithDevTools } from "@redux-devtools/extension";
-import { 
-    userListReducer,
-    userLoginReducer, 
-    userRegisterReducer 
+import {
+  userListReducer,
+  userLoginReducer,
+  userRegisterReducer,
 } from "./reducers/userReducer";
-import { projectsDisplayReducer } from "./reducers/projectReducer";
+import {
+  createProjectReducer,
+  projectDetailReducer,
+  projectUpdateReducer,
+  projectsDisplayReducer,
+} from "./reducers/projectReducer";
 
-
-
-// COMBINE REDUCERS 
+// COMBINE REDUCERS
 
 const reducer = combineReducers({
-    // users
-    userLogin : userLoginReducer,
-    userRegister : userRegisterReducer,
-    userList : userListReducer,
+  // users
+  userLogin: userLoginReducer,
+  userRegister: userRegisterReducer,
+  userList: userListReducer,
 
+  // projects
+  projectDisplay: projectsDisplayReducer,
+  createNewProject: createProjectReducer,
+  projectDetail: projectDetailReducer,
+  projectUpdate: projectUpdateReducer,
+});
 
-    // projects
-    projectDisplay : projectsDisplayReducer
-})
-
-// PULLING DATA OUT OF LOCAL STORAGE AND LOAD IT INTO LOCAL STORAGE 
+// PULLING DATA OUT OF LOCAL STORAGE AND LOAD IT INTO LOCAL STORAGE
 const userInfoFromStorage = localStorage.getItem("userInfo")
   ? JSON.parse(localStorage.getItem("userInfo"))
-  : null; 
+  : null;
 
-  
-
-
-// create initial state 
+// create initial state
 const initialState = {
-    userLogin:{
-        userInfo:userInfoFromStorage
-    }
-}  
+  userLogin: {
+    userInfo: userInfoFromStorage,
+  },
+};
 
-console.log('userrrrrrrrrrrrrrr', userInfoFromStorage)
+console.log("userrrrrrrrrrrrrrr", userInfoFromStorage);
 
-console.log('initiallllll', initialState)
+console.log("initiallllll", initialState);
 
-
-const middleware = [thunk]
+const middleware = [thunk];
 
 // REDUX STORE
 const store = createStore(
-    reducer,
-    initialState,
-    composeWithDevTools(applyMiddleware(...middleware))
-)
+  reducer,
+  initialState,
+  composeWithDevTools(applyMiddleware(...middleware))
+);
 
-export default store
+export default store;

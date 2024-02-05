@@ -24,7 +24,7 @@ const UserRoleAssigmentModal = (props) => {
       </tr>
     </thead>
     <tbody>
-      {props.users.map((user)=>(
+      {props.users?.map((user)=>(
            <tr index={user.id}>
            <td>{user.id}</td>
            <td>{user.first_name}</td>
@@ -39,7 +39,7 @@ const UserRoleAssigmentModal = (props) => {
 
   const RoleTable = (
     <Form>
-    {roleAssign.map((type) => (
+    {roleAssign?.map((type) => (
       <div key={type.id} className="mb-3">
         <Form.Check // prettier-ignore
           type={type.role}

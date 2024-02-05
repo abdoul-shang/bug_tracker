@@ -1,26 +1,39 @@
-h3{
-    color: rgb(125, 131, 131);
-    margin-left: 3rem;
-    /* align-items: center; */
-    /* justify-content: center;
-    align-items: center; */ 
+h3 {
+  color: rgb(125, 131, 131);
+  margin-left: 3rem;
+  /* align-items: center; */
+  /* justify-content: center;
+    align-items: center; */
 }
 
-hr{
-    margin-left: 3rem;
-    margin-right: 3rem;
-} 
-
-.mr-bg{
-    background-color: rgba(210, 237, 243, 0.25);
-} 
-
-.mr-color{
-    color: #fff;
+hr {
+  margin-left: 3rem;
+  margin-right: 3rem;
 }
-.mr-centered{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    column-gap: 1.5rem;
+
+.mr-bg {
+  background-color: rgba(227, 230, 230, 0.25);
+}
+
+.mr-color {
+  color: #fff;
+}
+.mr-centered {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 1.5rem;
+}
+
+.ml {
+  margin-left: 2.5rem;
+  margin-right: 2.5rem;
+}
+
+.project-list {
+  margin-top: 2.5rem;
+}
+
+.project-list-table {
+  background-color: blue;
 }

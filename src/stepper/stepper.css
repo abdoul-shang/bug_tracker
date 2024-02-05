@@ -1,0 +1,40 @@
+/* Stepper.css */
+
+.stepper-container {
+  max-width: 75%;
+  margin: 0 auto;
+}
+
+.step-progress {
+  display: flex;
+  justify-content: space-between;
+}
+
+.step {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #ccc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.step.active {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.step-content {
+  margin: 20px 0;
+  margin-top: 4rem;
+}
+.step-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 3rem;
+}
+
+.step-buttons button {
+  margin-right: 10px;
+}
