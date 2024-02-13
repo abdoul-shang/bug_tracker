@@ -18,6 +18,22 @@
   float: right;
 }
 
+.user-d {
+  display: "flex";
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.del-btn {
+  display: flex;
+  justify-content: end;
+  margin-top: 1rem;
+}
+
+.del-btn-x {
+  margin-right: 0.5rem;
+}
+
 /* .form-new-project {
   line-height: 4rem;
 } */

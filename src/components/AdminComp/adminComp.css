@@ -37,3 +37,35 @@ hr {
 .project-list-table {
   background-color: blue;
 }
+
+.comp-center {
+  margin: 3rem;
+}
+
+.assign-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.m-trash {
+  color: rgb(236, 30, 30);
+}
+
+.contrib-proj-select {
+  /* background-color: blue; */
+  max-width: 80%;
+  margin-left: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.form-issue {
+  flex: 6;
+  margin-right: 1rem;
+}
+
+/* .m-b {
+  margin-top: 1rem;
+} */

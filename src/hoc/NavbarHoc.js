@@ -21,6 +21,7 @@ import MyTickets from "../components/AdminComp/MyTickets";
 import HomeScreen from "../screen/HomeScreen";
 import { getProjectDisplay } from "../actions/projectActions";
 import Management from "../components/AdminComp/Management";
+import { getUserList } from "../actions/userAction";
 
 // import { useValue } from "./useValue";
 
@@ -40,8 +41,15 @@ const NavbarHoc = (WrappedComponent) => {
     console.log("valueeee", value);
 
     useEffect(() => {
-      if (value === "MyProjects") {
+      if (
+        value === "MyProjects" ||
+        value === "ManageRole" ||
+        value === "ManageProject" ||
+        value === "MyTickets"
+      ) {
         dispatch(getProjectDisplay());
+        dispatch(getUserList());
+        console.log("cooool clicked");
       }
     }, [value]);
 
@@ -59,12 +67,14 @@ const NavbarHoc = (WrappedComponent) => {
 
     console.log("projecttttttttttt", project);
 
+    console.log("projectssssssssssssss", projects);
+
     const sideBarItemsHookup = {
       Dashboard: <Dashboard />,
-      ManageRole: <ManageRole />,
-      ManageProject: <ManageUser />,
+      ManageRole: <ManageRole projects={projects} project={project} />,
+      ManageProject: <ManageUser projects={projects} project={project} />,
       MyProjects: <MyProjects projects={projects} project={project} />,
-      MyTickets: <MyTickets />,
+      MyTickets: <MyTickets projects={projects} project={project} />,
       Management: <Management />,
     };
 

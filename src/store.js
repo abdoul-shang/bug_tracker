@@ -5,14 +5,22 @@ import thunk from "redux-thunk";
 
 import { composeWithDevTools } from "@redux-devtools/extension";
 import {
+  userDetailReducer,
   userListReducer,
   userLoginReducer,
   userRegisterReducer,
 } from "./reducers/userReducer";
 import {
+  contributorDeleteReducer,
+  contributorsDisplayReducer,
+  createIssueReducer,
   createProjectReducer,
+  issueDeleteReducer,
+  issueUpdateReducer,
+  issuesDisplayReducer,
   projectDetailReducer,
   projectUpdateReducer,
+  projectUserRoleReducer,
   projectsDisplayReducer,
 } from "./reducers/projectReducer";
 
@@ -23,12 +31,20 @@ const reducer = combineReducers({
   userLogin: userLoginReducer,
   userRegister: userRegisterReducer,
   userList: userListReducer,
+  userDetail: userDetailReducer,
 
   // projects
   projectDisplay: projectsDisplayReducer,
   createNewProject: createProjectReducer,
   projectDetail: projectDetailReducer,
   projectUpdate: projectUpdateReducer,
+  projectUserRole: projectUserRoleReducer,
+  contributorsDisplay: contributorsDisplayReducer,
+  contributorDelete: contributorDeleteReducer,
+  issuesDisplay: issuesDisplayReducer,
+  createIssue: createIssueReducer,
+  updateIssue: issueUpdateReducer,
+  deleteIssue: issueDeleteReducer,
 });
 
 // PULLING DATA OUT OF LOCAL STORAGE AND LOAD IT INTO LOCAL STORAGE

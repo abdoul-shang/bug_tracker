@@ -1,0 +1,14 @@
+.table-class {
+  margin-top: 2rem;
+  max-width: 80%;
+  margin-left: 4rem;
+}
+
+.trash-pen {
+  display: flex;
+  justify-content: space-around;
+}
+
+.m-pen {
+  color: rgb(43, 144, 202);
+}
